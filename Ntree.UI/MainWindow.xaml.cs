@@ -18,12 +18,7 @@ namespace Ntree.UI
 			db = new DataContext();
 		}
 
-		private void MenuItem_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void BindData()
 		{
 			var users = new ObservableCollection<User>(db.GetAllUsers());
 			var images = new ObservableCollection<Image>(db.GetAllImages());
@@ -31,9 +26,19 @@ namespace Ntree.UI
 			ImagessGrid.ItemsSource = images.ToBindingList();
 		}
 
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			BindData();
+		}
+
 		private void MenuItem_Click_Exit(object sender, RoutedEventArgs e)
 		{
 			Close();
+		}
+
+		private void MenuItem_Click_Start(object sender, RoutedEventArgs e)
+		{
+			BindData();
 		}
 	}
 }

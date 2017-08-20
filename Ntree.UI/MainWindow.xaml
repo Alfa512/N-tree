@@ -10,24 +10,19 @@
     <Grid HorizontalAlignment="Left" Width="749" Height="340" VerticalAlignment="Top">
         <Menu HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="126">
             <MenuItem Header="File">
-                <MenuItem Header="Start"></MenuItem>
+                <MenuItem Header="Start" Click="MenuItem_Click_Start"></MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="Exit" Click="MenuItem_Click_Exit"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Tables">
-                <MenuItem Header="Users"></MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="Images"></MenuItem>
-            </MenuItem>
             <MenuItem Header="Help">
-                <MenuItem Header="Documentation" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Documentation"></MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="About"></MenuItem>
             </MenuItem>
         </Menu>
         <Button Content="Start" HorizontalAlignment="Left" Margin="664,60,0,0" VerticalAlignment="Top" Width="75" AutomationProperties.Name="Start_Btn" Click="Button_Click"/>
         <TabControl Height="305" MinHeight="200" Margin="10,35,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="649" >
-            <TabItem Header="Tables">
+            <TabItem Header="Users">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid AutoGenerateColumns="False" x:Name="UsersGrid">
                         <DataGrid.Columns>
@@ -46,12 +41,14 @@
                     <DataGrid AutoGenerateColumns="False" x:Name="ImagessGrid">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="100"/>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="110"/>
+                            <DataGridTextColumn Binding="{Binding Avatar}" Header="Avatar" Width="110"/>
                             <DataGridTextColumn Binding="{Binding ImagePath}" Header="ImagePath" Width="70"/>
                             <DataGridTextColumn Binding="{Binding FileType}" Header="FileType" Width="70"/>
                             <DataGridTextColumn Binding="{Binding Description}" Header="Description" Width="70"/>
                             <DataGridTextColumn Binding="{Binding CreationDate}" Header="CreationDate" Width="70"/>
                             <DataGridTextColumn Binding="{Binding UserId}" Header="UserId" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding IsDeleted}" Header="IsDeleted" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding Location}" Header="Location" Width="70"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
