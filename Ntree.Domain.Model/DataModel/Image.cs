@@ -6,6 +6,7 @@ using Ntree.Domain.Model.Enums;
 
 namespace Ntree.Domain.Model.DataModel
 {
+	[Table("UserImages")]
 	public class Image
 	{
 		public Image()

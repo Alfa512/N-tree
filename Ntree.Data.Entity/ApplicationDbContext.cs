@@ -1,30 +1,28 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Ntree.Common.Contracts;
 using Ntree.Domain.Model.DataModel;
 
 namespace Ntree.Data.Entity
 {
 	public class ApplicationDbContext : DbContext//, IDataContext
 	{
-		public ApplicationDbContext() : base("ConnectionString")
+		public ApplicationDbContext() : base("DefaultConnection")
 		{
-			Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+			//Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
 		}
 
 		public DbSet<User> Users { get; set; }
-		public DbSet<Image> Images { get; set; }
+		public DbSet<Image> UserImages { get; set; }
 
-		//void IDataContext.Commit()
-		//{
-		//	SaveChanges();
-		//}
+		public void Commit()
+		{
+			SaveChanges();
+		}
 
-		//void IDisposable.Dispose()
-		//{
-		//	Dispose();
-		//}
+		public void DisposeData()
+		{
+			Dispose();
+		}
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

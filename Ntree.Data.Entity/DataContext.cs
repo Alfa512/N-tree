@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Ntree.Domain.Model.DataModel;
 
@@ -11,7 +12,8 @@ namespace Ntree.Data.Entity
 		public DataContext()
 		{
 			_dbContext = new ApplicationDbContext();
-			_dbContext.Database.Initialize(false);
+			_dbContext.Users.Load();
+			_dbContext.UserImages.Load();
 		}
 
 		public List<User> GetAllUsers()
@@ -21,7 +23,7 @@ namespace Ntree.Data.Entity
 		}
 		public List<Image> GetAllImages()
 		{
-			var images = _dbContext.Images.ToList();
+			var images = _dbContext.UserImages.ToList();
 			return images;
 		}
 	}

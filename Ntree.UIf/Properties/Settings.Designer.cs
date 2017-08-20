@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ntree.UI.Properties
+namespace N_tree.Properties
 {
 
 

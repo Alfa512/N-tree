@@ -1,9 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ntree.Domain.Model.DataModel
 {
 	public class User
 	{
+		[Key]
+		public string Id { get; set; }
 		public string Name { get; set; }
 		public string LastName { get; set; }
 		public bool Sex { get; set; }

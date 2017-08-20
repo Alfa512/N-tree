@@ -1,0 +1,62 @@
+﻿<Window MinHeight="380" MaxHeight="380" MinWidth="760" MaxWidth="760" x:Class="Ntree.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ap="clr-namespace:Ntree.UI.AttachedProperties"
+        xmlns:local="clr-namespace:Ntree.UI"
+        mc:Ignorable="d"
+        Title="N-tree" Height="380" Width="759" AutomationProperties.Name="MainWindow">
+    <Grid HorizontalAlignment="Left" Width="749" Height="340" VerticalAlignment="Top">
+        <Menu HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="126">
+            <MenuItem Header="File">
+                <MenuItem Header="Start"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Click="MenuItem_Click_Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Tables">
+                <MenuItem Header="Users"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Images"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="Documentation" Click="MenuItem_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="About"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="664,60,0,0" VerticalAlignment="Top" Width="75" AutomationProperties.Name="Start_Btn" Click="Button_Click"/>
+        <TabControl Height="305" MinHeight="200" Margin="10,35,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="649" >
+            <TabItem Header="Tables">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid AutoGenerateColumns="False" x:Name="UsersGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="110"/>
+                            <DataGridTextColumn Binding="{Binding LastName}" Header="LastName" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding Sex}" Header="Sex" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding RegistrationDate}" Header="RegistrationDate" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding TokenValidTo}" Header="TokenValidTo" Width="70"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Images">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid AutoGenerateColumns="False" x:Name="ImagessGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="110"/>
+                            <DataGridTextColumn Binding="{Binding ImagePath}" Header="ImagePath" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding FileType}" Header="FileType" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding Description}" Header="Description" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding CreationDate}" Header="CreationDate" Width="70"/>
+                            <DataGridTextColumn Binding="{Binding UserId}" Header="UserId" Width="70"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
