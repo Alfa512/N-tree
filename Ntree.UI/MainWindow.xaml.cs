@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.Linq;
 using System.Windows;
+using Ntree.Common.Contracts.Repositories;
 using Ntree.Data.Entity;
 using Ntree.Domain.Model.DataModel;
 
@@ -11,19 +13,25 @@ namespace Ntree.UI
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private DataContext db;
-		public MainWindow()
+		private readonly DataContext _db;
+		private readonly IDataAccessContext _dbs;
+		public MainWindow(IDataAccessContext dbs)
 		{
 			InitializeComponent();
-			db = new DataContext();
+			BootStrapper.Start();
+			_db = new DataContext();
+			_dbs = dbs;
 		}
 
 		private void BindData()
 		{
-			var users = new ObservableCollection<User>(db.GetAllUsers());
-			var images = new ObservableCollection<Image>(db.GetAllImages());
+			var users = new ObservableCollection<User>(_db.GetAllUsers());
+			var images = new ObservableCollection<Image>(_db.GetAllImages());
 			UsersGrid.ItemsSource = users.ToBindingList();
 			ImagessGrid.ItemsSource = images.ToBindingList();
+			_dbs.UpdateImages(images.ToList());
+			_dbs.UpdateUsers(users.ToList());
+			
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

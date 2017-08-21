@@ -9,12 +9,11 @@ namespace Ntree.Domain.Model.DataModel
 	[Table("UserImages")]
 	public class Image
 	{
-		public Image()
-		{
-			Id = Guid.NewGuid().ToString();
-		}
+		//public Image()
+		//{
+		//	Id = Guid.NewGuid().ToString();
+		//}
 		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public string Id { get; set; }
 		public string ImagePath { get; set; }
 		public string FileType { get; set; }

@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,6 +65,10 @@
     <ProjectReference Include="..\Ntree.Common.Contracts\Ntree.Common.Contracts.csproj">
       <Project>{15B3DF16-59A6-4AC7-A093-2DFFA857AE8A}</Project>
       <Name>Ntree.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ntree.Data.Entity.NtreeAccess\Ntree.Data.Entity.NtreeAccess.csproj">
+      <Project>{903B9435-1EA9-400A-9A6A-597775B6D25A}</Project>
+      <Name>Ntree.Data.Entity.NtreeAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ntree.Domain.Model\Ntree.Domain.Model.csproj">
       <Project>{006ADB2C-EF21-4E6D-8FE7-FBB39636D1A0}</Project>
