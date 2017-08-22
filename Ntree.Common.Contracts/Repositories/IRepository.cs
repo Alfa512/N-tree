@@ -11,5 +11,6 @@ namespace Ntree.Common.Contracts.Repositories
         T Update(T entity);
         T Delete(T entity);
 	    IEnumerable<T> DeleteRange(IEnumerable<T> entity);
+        
    }
 }

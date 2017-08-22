@@ -26,16 +26,14 @@ namespace Ntree.Data.Entity.NtreeAccess
 
 	    public IEnumerable<T> AddRange(IEnumerable<T> entity)
 	    {
-		    return Context.Set<T>().AddRange(entity);
+            return Context.Set<T>().AddRange(entity);
 	    }
-
 
 		public T Update(T entity)
         {
             var entry = Context.Entry(entity);
             if (entry.State == EntityState.Detached)
             {
-                Context.Set<T>().Attach(entity);
                 entry = Context.Entry(entity);
             }
 

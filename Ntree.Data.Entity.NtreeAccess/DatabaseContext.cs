@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using Ntree.Common.Contracts;
 using Ntree.Common.Contracts.Repositories;
 using Ntree.Data.Entity.NtreeAccess.Repositories;
@@ -9,9 +8,13 @@ namespace Ntree.Data.Entity.NtreeAccess
 {
 	public class DatabaseContext : DbContext, IDataContext
 	{
-		public DatabaseContext() : base("DestinationConnection")
-		{
-			Database.SetInitializer(new CreateDatabaseIfNotExists<DatabaseContext>());
+	    //private IUserRepository _userRepository;
+	    //private IImageRepository _imageRepository;
+        public DatabaseContext(/*IUserRepository userRepository, IImageRepository imageRepository*/) : base("DestinationConnection")
+        {
+            //_userRepository = userRepository;
+            //_imageRepository = imageRepository;
+            Database.SetInitializer(new CreateDatabaseIfNotExists<DatabaseContext>());
 		}
 
 		IUserRepository IDataContext.Users => new UserRepository(this);
@@ -31,13 +34,19 @@ namespace Ntree.Data.Entity.NtreeAccess
 		{
 			modelBuilder.Entity<User>();
 			modelBuilder.Entity<Image>();
-			//modelBuilder.Conventions.Add(conven);
-			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-		}
+            //modelBuilder.Conventions.Add(conven);
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-		public static DatabaseContext Create()
-		{
-			return new DatabaseContext();
-		}
+		    modelBuilder.Entity<Image>()
+		        .HasRequired(s => s.User)
+		        .WithMany(s => s.UserImages)
+		        .HasForeignKey(s => s.UserId);
+        }
+
+
+		//public static DatabaseContext Create()
+		//{
+		//	return new DatabaseContext();
+		//}
 	}
 }

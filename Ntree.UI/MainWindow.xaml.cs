@@ -17,22 +17,24 @@ namespace Ntree.UI
 		private readonly IDataAccessContext _dbs;
 		public MainWindow(IDataAccessContext dbs)
 		{
-			InitializeComponent();
-			BootStrapper.Start();
-			_db = new DataContext();
-			_dbs = dbs;
-		}
+			
+			//BootStrapper.Start();
+			
+		    InitializeComponent();
+		    _db = new DataContext();
+            _dbs = dbs;
+        }
 
-		private void BindData()
+	    private void BindData()
 		{
 			var users = new ObservableCollection<User>(_db.GetAllUsers());
 			var images = new ObservableCollection<Image>(_db.GetAllImages());
 			UsersGrid.ItemsSource = users.ToBindingList();
 			ImagessGrid.ItemsSource = images.ToBindingList();
-			_dbs.UpdateImages(images.ToList());
 			_dbs.UpdateUsers(users.ToList());
-			
-		}
+		    _dbs.UpdateImages(images.ToList());
+
+        }
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{

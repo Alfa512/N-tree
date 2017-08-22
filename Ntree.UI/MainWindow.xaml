@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ap="clr-namespace:Ntree.UI.AttachedProperties"
-        xmlns:local="clr-namespace:Ntree.UI"
+        
         mc:Ignorable="d"
         Title="N-tree" Height="380" Width="759" AutomationProperties.Name="MainWindow">
 	<Grid HorizontalAlignment="Left" Width="749" Height="340" VerticalAlignment="Top">
