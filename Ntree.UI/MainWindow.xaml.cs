@@ -37,7 +37,7 @@ namespace Ntree.UI
 			UsersGrid.ItemsSource = users.ToBindingList();
 			ImagessGrid.ItemsSource = images.ToBindingList();
 			//_dbs.UpdateUsers(users.ToList());
-		    _dbs.UpdateImages(images.ToList());
+		    //_dbs.UpdateImages(images.ToList());
 
         }
 

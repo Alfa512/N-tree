@@ -17,18 +17,15 @@ namespace Ntree.UI
 			InitializeComponent();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void Ok_Button_Click(object sender, RoutedEventArgs e)
 		{
 			if (!string.IsNullOrWhiteSpace(SourceConnStringTb.Text.Trim()))
 				_connectionService.ChangeDatabase(SourceConnStringTb.Text.Trim());
 
 			if (!string.IsNullOrWhiteSpace(DestConnStringTb.Text.Trim()))
 				_connectionService.ChangeDatabase(DestConnStringTb.Text.Trim());
-		}
 
-		private void Ok_Button_Click(object sender, RoutedEventArgs e)
-		{
-
+			Close();
 		}
 
 		private void Cancel_Button_Click(object sender, RoutedEventArgs e)
