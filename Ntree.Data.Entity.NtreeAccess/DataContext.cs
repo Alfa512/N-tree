@@ -8,9 +8,9 @@ namespace Ntree.Data.Entity.NtreeAccess
 {
     public class DataContext : IDataAccessContext
     {
-        private readonly IDataContext _dbContext;
+        private readonly IDatabaseContext _dbContext;
 
-        public DataContext(IDataContext dbContext)
+        public DataContext(IDatabaseContext dbContext)
         {
             _dbContext = dbContext;
             //_dbContext.Users. Load();

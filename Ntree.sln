@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntree.UI", "Ntree.UI\Ntree.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntree.Data.Entity.NtreeAccess", "Ntree.Data.Entity.NtreeAccess\Ntree.Data.Entity.NtreeAccess.csproj", "{903B9435-1EA9-400A-9A6A-597775B6D25A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntree.Business.Services", "Ntree.Business.Services\Ntree.Business.Services.csproj", "{C1CE0090-D1D5-4A2C-AD50-70709CCDF4E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{903B9435-1EA9-400A-9A6A-597775B6D25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{903B9435-1EA9-400A-9A6A-597775B6D25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{903B9435-1EA9-400A-9A6A-597775B6D25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1CE0090-D1D5-4A2C-AD50-70709CCDF4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CE0090-D1D5-4A2C-AD50-70709CCDF4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CE0090-D1D5-4A2C-AD50-70709CCDF4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CE0090-D1D5-4A2C-AD50-70709CCDF4E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

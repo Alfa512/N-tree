@@ -1,13 +1,16 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Ntree.Common.Contracts.Repositories;
 using Ntree.Domain.Model.DataModel;
 
 namespace Ntree.Data.Entity
 {
-	public class ApplicationDbContext : DbContext//, IDataContext
+	public class ApplicationDbContext : DbContext, IApplicationDbContext
 	{
-		public ApplicationDbContext() : base("DefaultConnection")
+		private IConfigurationService _configurationService;
+		public ApplicationDbContext(IConfigurationService configurationService) : base(configurationService.SourceConnectionString)
 		{
+			_configurationService = configurationService;
 			//Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
 		}
 
@@ -30,9 +33,9 @@ namespace Ntree.Data.Entity
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
 		}
-		public static ApplicationDbContext Create()
-		{
-			return new ApplicationDbContext();
-		}
+		//public static ApplicationDbContext Create()
+		//{
+		//	return new ApplicationDbContext(_configurationService);
+		//}
 	}
 }

@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using Ntree.Common.Contracts.Repositories;
 using Ntree.Domain.Model.DataModel;
 
 namespace Ntree.Data.Entity
 {
-	public class DataContext
+	public class DataContext : IDataContext
 	{
-		private readonly ApplicationDbContext _dbContext;
+		private readonly IApplicationDbContext _dbContext;
 
-		public DataContext()
+		public DataContext(IApplicationDbContext dbContext)
 		{
-			_dbContext = new ApplicationDbContext();
+			_dbContext = dbContext;
 			_dbContext.Users.Load();
 			_dbContext.UserImages.Load();
 		}

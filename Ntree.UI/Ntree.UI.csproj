@@ -101,12 +101,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManageConnection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UsersTableView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageConnection.xaml.cs">
+      <DependentUpon>ManageConnection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -134,6 +141,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ntree.Business.Services\Ntree.Business.Services.csproj">
+      <Project>{C1CE0090-D1D5-4A2C-AD50-70709CCDF4E3}</Project>
+      <Name>Ntree.Business.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ntree.Common.Contracts\Ntree.Common.Contracts.csproj">
       <Project>{15B3DF16-59A6-4AC7-A093-2DFFA857AE8A}</Project>
       <Name>Ntree.Common.Contracts</Name>

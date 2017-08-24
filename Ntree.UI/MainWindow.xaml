@@ -3,15 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
+        xmlns:local="clr-namespace:Ntree.UI"
         mc:Ignorable="d"
-        Title="N-tree" Height="380" Width="759" AutomationProperties.Name="MainWindow">
+        Title="N-tree" Height="380" Width="760" AutomationProperties.Name="MainWindow">
 	<Grid HorizontalAlignment="Left" Width="749" Height="340" VerticalAlignment="Top">
 		<Menu HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="126">
 			<MenuItem Header="File">
 				<MenuItem Header="Start" Click="MenuItem_Click_Start" />
 				<Separator />
 				<MenuItem Header="Exit" Click="MenuItem_Click_Exit" />
+			</MenuItem>
+			<MenuItem Header="Tools">
+				<MenuItem Header="Manage Connection" Click="MenuItem_Click_ConnManage" />
 			</MenuItem>
 			<MenuItem Header="Help">
 				<MenuItem Header="Documentation" />
